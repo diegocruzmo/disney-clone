@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { getTrendingVideos } from '../services/api'
-import { Movie, Trending } from '../types'
+import { Video, Videos } from '../types'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 
 const screenWidth = window.innerWidth
 
 const Slider = () => {
-  const [trending, setTrending] = useState<Movie[]>([])
+  const [trending, setTrending] = useState<Video[]>([])
   const imagesRef = useRef<HTMLDivElement>(null)
 
   const goLeft = (element: HTMLDivElement | null) => {
@@ -19,7 +19,7 @@ const Slider = () => {
 
   const getTrending = async () => {
     try {
-      const data: Trending = await getTrendingVideos()
+      const data: Videos = await getTrendingVideos()
       setTrending(data.results)
     } catch (error) {
       console.error(error)

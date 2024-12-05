@@ -1,11 +1,11 @@
-export interface Trending {
+export interface Videos {
   page: number
-  results: Movie[]
+  results: Video[]
   total_pages: number
   total_results: number
 }
 
-export interface Movie {
+export interface Video {
   backdrop_path: string
   id: number
   name?: string
